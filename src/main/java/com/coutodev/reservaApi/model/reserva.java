@@ -2,8 +2,6 @@ package com.coutodev.reservaApi.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,12 +10,12 @@ import lombok.Setter;
 import java.time.LocalDate;
 
 @Entity()
-@Table
+@Table(name = "reserva")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Reserva {
+public class reserva {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
