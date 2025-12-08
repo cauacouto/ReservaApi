@@ -1,10 +1,13 @@
 package com.coutodev.reservaApi.Service;
 
+import com.coutodev.reservaApi.DTO.DtoAtualizarParcial;
 import com.coutodev.reservaApi.DTO.DtoRequest;
 import com.coutodev.reservaApi.Repository.ReservaRepository;
 import com.coutodev.reservaApi.model.reserva;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ReservaService {
@@ -28,6 +31,18 @@ public class ReservaService {
         exist.setDataDareserva(dto.DataDaReserva());
         exist.setWhatsapp(dto.whatsapp());
         repository.save(exist);
+    }
 
+    public void atualizarParcialmente(Integer id, DtoAtualizarParcial dto){
+        reserva exist = repository.findById(id).orElseThrow(()
+                -> new RuntimeException("reserva não encontrada"));
+        dto.nome().ifPresent(exist::setNome);
+        dto.email().ifPresent(exist::setEmail);
+        dto.dataDareserva().ifPresent(exist::setDataDareserva);
+        dto.whatsapp().ifPresent(exist::setWhatsapp);
+    }
+
+    public List<reserva> listarReservas(){
+      return   repository.findAll();
     }
 }
