@@ -1,7 +1,6 @@
 # 🏨 reservaApi - Sistema de Gestão de Reservas
 
-Projeto de back-end desenvolvido em **Spring Boot** para gerenciar o ciclo de vida de reservas (CRUD) e implementar um fluxo de trabalho de confirmação de e-mail transacional robusto, substituindo a dependência de serviços externos (como n8n) por uma solução nativa e segura.
-
+Projeto de back-end desenvolvido em **Spring Boot** para gerenciar o ciclo de vida de reservas (CRUD) e implementar um fluxo de trabalho de confirmação de e-mail 
 ## 🛠️ Tecnologias Utilizadas
 
 * **Linguagem:** Java 21+
